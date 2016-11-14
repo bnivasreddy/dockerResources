@@ -2,6 +2,8 @@ FROM java:8-jdk
 MAINTAINER B. Laster (bclaster@nclasters.org)
 # Mount point is /usr/src/project "docker run --rm -v /path/to/app:/usr/src/project gradle <command>")
 
+RUN apk update && apk add libstdc++ && rm -rf /var/cache/apk/*
+
 # Gradle
 ENV GRADLE_VERSION 2.14.1
 
