@@ -15,8 +15,8 @@ RUN cd /opt \
 ENV GRADLE_HOME /opt/gradle
 ENV PATH $PATH:$GRADLE_HOME/bin
 
-RUN mkdir -p /home/diyuser
-RUN echo 'diyuser::1002:0::/home/diyuser:/bin/bash' >> /etc/passwd
+RUN mkdir -p /home/root
+RUN echo 'root::1002:0::/home/root:/bin/bash' >> /etc/passwd
 
 # Caches
 VOLUME ["/root/.gradle/caches", "/usr/src"]
