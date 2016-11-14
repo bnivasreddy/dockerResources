@@ -19,6 +19,9 @@ ENV PATH $PATH:$GRADLE_HOME/bin
 # Caches
 VOLUME ["/root/.gradle/caches", "/usr/src/project"]
 
+RUN mkdir -p /home/diyuser
+RUN echo 'diyuser::1002:0::/home/diyuser:/bin/bash' >> /etc/passwd
+
 WORKDIR /usr/src
 # ENTRYPOINT ["/bin/bash"]
 
